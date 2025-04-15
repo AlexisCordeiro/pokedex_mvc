@@ -17,7 +17,7 @@ class _PokemonCardState extends State<PokemonCard> {
 
   @override
   Widget build(BuildContext context) {
-    // Pegando o tipo principal para gerar gradiente/cor
+    
     final String mainType = widget.pokemon.types.isNotEmpty ? widget.pokemon.types.first : '';
     final cardGradient = PokeColors.cardGradient(mainType);
 
@@ -30,7 +30,7 @@ class _PokemonCardState extends State<PokemonCard> {
         ),
         child: Stack(
           children: [
-            // Fundo gradiente, baseado no tipo do Pokémon
+            
             Container(
               decoration: BoxDecoration(
                 gradient: cardGradient,
@@ -44,12 +44,11 @@ class _PokemonCardState extends State<PokemonCard> {
                 ],
               ),
             ),
-            // Conteúdo do card
+           
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Stack(
                 children: [
-                  // Nome do Pokémon (top left)
                   Positioned(
                     top: 0,
                     left: 0,
@@ -68,7 +67,6 @@ class _PokemonCardState extends State<PokemonCard> {
                       ),
                     ),
                   ),
-                  // HP do Pokémon (top right)
                   Positioned(
                     top: 0,
                     right: 0,
@@ -81,7 +79,6 @@ class _PokemonCardState extends State<PokemonCard> {
                       ),
                     ),
                   ),
-                  // Ícone de "favoritar" (top left, logo abaixo do nome)
                   Positioned(
                     top: 20,
                     left: 0,
@@ -94,7 +91,6 @@ class _PokemonCardState extends State<PokemonCard> {
                       splashRadius: 20,
                     ),
                   ),
-                  // Imagem do Pokémon (centralizada)
                   Positioned.fill(
                     child: Center(
                       child: Hero(
@@ -109,7 +105,6 @@ class _PokemonCardState extends State<PokemonCard> {
                       ),
                     ),
                   ),
-                  // Move e dano (abaixo, na parte de baixo do card)
                   Positioned(
                     left: 0,
                     right: 0,
@@ -117,7 +112,6 @@ class _PokemonCardState extends State<PokemonCard> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Move
                         Row(
                           children: [
                             const Icon(Icons.flash_on, size: 16, color: Colors.orange),
